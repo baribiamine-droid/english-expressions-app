@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Expressions</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 24px; }
+    li { cursor: pointer; margin: 8px 0; }
+    small { color: #555; margin-left: 8px; }
+  </style>
+</head>
+<body>
+  <h1>English Expressions</h1>
+  <ul id="list">
+    <li data-audio="audio/greetings_01.mp3">Good morning, class! <small>(Bonjour la classe)</small></li>
+    <li data-audio="audio/greetings_02.mp3">Good afternoon! <small>(Bon après-midi)</small></li>
+    <li data-audio="audio/greetings_03.mp3">Hello everyone! <small>(Bonjour à tous)</small></li>
+    <li data-audio="audio/greetings_04.mp3">Welcome back! <small>(Bienvenue)</small></li>
+    <li data-audio="audio/classroom_01.mp3">Please take your seats! <small>(Veuillez vous asseoir)</small></li>
+    <li data-audio="audio/classroom_02.mp3">Open your books. <small>(Ouvrez vos livres)</small></li>
+    <li data-audio="audio/classroom_03.mp3">Close your books. <small>(Fermez vos livres)</small></li>
+    <li data-audio="audio/classroom_04.mp3">Let's begin. <small>(Commençons)</small></li>
+    <li data-audio="audio/instructions_01.mp3">Listen carefully. <small>(Écoutez attentivement)</small></li>
+    <li data-audio="audio/instructions_02.mp3">Repeat after me. <small>(Répétez après moi)</small></li>
+    <li data-audio="audio/instructions_03.mp3">Read aloud. <small>(Lisez à haute voix)</small></li>
+    <li data-audio="audio/instructions_04.mp3">Write this down. <small>(Écrivez ceci)</small></li>
+    <li data-audio="audio/instructions_05.mp3">Answer the question. <small>(Répondez à la question)</small></li>
+    <li data-audio="audio/praise_01.mp3">Great job! <small>(Bon travail)</small></li>
+    <li data-audio="audio/praise_02.mp3">Well done! <small>(Bien joué)</small></li>
+    <li data-audio="audio/praise_03.mp3">Excellent! <small>(Excellent)</small></li>
+    <li data-audio="audio/praise_04.mp3">That's correct! <small>(C'est correct)</small></li>
+    <li data-audio="audio/praise_05.mp3">You're doing great! <small>(Tu te débrouilles bien)</small></li>
+    <li data-audio="audio/questions_01.mp3">Do you understand? <small>(Comprenez-vous ?)</small></li>
+    <li data-audio="audio/questions_02.mp3">Any questions? <small>(Des questions ?)</small></li>
+    <li data-audio="audio/questions_03.mp3">Can you repeat that? <small>(Pouvez-vous répéter ?)</small></li>
+    <li data-audio="audio/questions_04.mp3">What do you think? <small>(Qu'en pensez-vous ?)</small></li>
+  </ul>
+
+  <script>
+    document.getElementById('list').addEventListener('click', e => {
+      const li = e.target.closest('li[data-audio]');
+      if (!li) return;
+      new Audio(li.dataset.audio).play().catch(console.warn);
+    });
+  </script>
+</body>
+</html>
